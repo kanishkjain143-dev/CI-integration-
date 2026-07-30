@@ -24,7 +24,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.9"
+          python-version: "3.12"
 
       - name: Install Dependencies
         run: |
@@ -41,5 +41,10 @@ jobs:
       - name: Run Linter
         run: flake8 .
 
+      - name: Debug
+        run: |
+          pwd
+          ls -R
+
       - name: Run Tests
-        run: pytest
+        run: python -m pytest
